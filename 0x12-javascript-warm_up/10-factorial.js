@@ -1,8 +1,15 @@
 #!/usr/bin/node
-let num1 = isNaN(Number(process.argv[2])) ? 1 : Number(process.argv[2]);
-function fact (a) {
-  if (a === 0) return 1;
-  return a * fact(a - 1);
+const array = process.argv.slice(2);
+const number = parseInt(array[0]);
+if (isNaN(array[0])) {
+  console.log(1);
+} else {
+  console.log(factorial(number));
 }
-
-console.log(fact(num1));
+function factorial (n) {
+  if (n === 0) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
